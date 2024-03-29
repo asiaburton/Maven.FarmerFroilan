@@ -136,4 +136,24 @@ public class WednesdayTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testBrush() {
+        String expected = "brushing";
+
+        String actual = froilan.brush();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testClean() {
+        String expected = "washing";
+
+        String actual = froilan.clean();
+
+        Assert.assertEquals(expected,actual);
+
+
+    }
 }
