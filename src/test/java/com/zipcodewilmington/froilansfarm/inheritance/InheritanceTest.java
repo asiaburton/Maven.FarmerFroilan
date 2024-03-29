@@ -186,4 +186,10 @@ public class InheritanceTest {
         CornStalk cs = new EarCorn();
         Assert.assertTrue(cs instanceof CornStalk);
     }
+
+    @Test
+    public void testRiderInheritance2(){
+        Rider rider = new Rideable();
+        Assert.assertTrue(rider instanceof Rider);
+    }
 }

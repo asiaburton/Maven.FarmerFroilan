@@ -136,4 +136,19 @@ public class ThursdayTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testMilkCowsYield(){
+        Cow cow = new Cow();
+        Milk actual = cow.yield();
+        Assert.assertTrue(actual instanceof Milk);
+    }
+
+    @Test
+    public void testChickenYield(){
+        Chicken chick = new Chicken();
+        Egg actual = chicken.yield();
+        Assert.assertTrue(actual instanceof Egg);
+    }
+
 }
