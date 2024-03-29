@@ -8,12 +8,14 @@ public class SaturdayTest {
     Farmer froilan;
     Pilot froilanda;
     Farm farm;
+    Cow cow;
 
     @Before
     public void setUp(){
         froilan = new Farmer();
         froilanda = new Pilot();
         farm = new Farm();
+        cow = new   Cow();
     }
 
     @Test
@@ -136,4 +138,12 @@ public class SaturdayTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testGetMilk() {
+
+    }
+
+
+
 }

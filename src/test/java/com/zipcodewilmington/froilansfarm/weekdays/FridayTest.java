@@ -136,4 +136,31 @@ public class FridayTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+
+    @Test
+    public void testCutGrass() {
+        for (int i = 0; i < field.cropRows.size(); i++) {
+            boolean actual = field.cropRows.get(i).cutGrass;
+        }
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void testCutGrass() {
+
+        // Iterate through all the crops in the crop rows to see if the grass has been cut
+        for (int i = 0; i < field.cropRows.size(); i++) {
+            boolean actual = field.cropRows.get(i);
+            Assert.assertFalse(actual);
+        }
+
+    }
+    @Test
+    public void testHay1() {
+        boolean expected = true;
+        boolean actual = field.hasBeenCut;
+
+        Assert.assertEquals(expected, actual);
+    }
 }
