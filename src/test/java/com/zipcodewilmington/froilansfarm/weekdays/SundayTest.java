@@ -8,12 +8,15 @@ public class SundayTest {
     Farmer froilan;
     Pilot froilanda;
     Farm farm;
+    Botanist botanist;
+
 
     @Before
     public void setUp(){
         froilan = new Farmer();
         froilanda = new Pilot();
         farm = new Farm();
+
     }
 
     @Test
@@ -123,7 +126,7 @@ public class SundayTest {
 
     @Test
     public void testSiloSize() {
-        int expected = silo.size() - 3;
+        int expected = silo.size() - 2;
         boolean eat = froilanda.eat();
         int actual = silo.size();
         Assert.assertEquals(expected, actual);
@@ -136,4 +139,42 @@ public class SundayTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+
+
+
+
+
+
+
+
+@Test
+    public void testForCropRow1(){
+        CropRow croprow1=new CropRow();
+        croprow1.add(cropOne);
+        String Expected="CornStalk";
+        String Actual =croprow1.get();
+        Assert.assertEquals(expected, actual);
+}
+
+@Test
+    public void testForCropRow2(){
+        CropRow croprow2=new CropRow();
+        croprow2.add(cropTwo);
+        String Expected="TomatoPlant";
+        String Actual =croprow2.get();
+        Assert.assertEquals(expected, actual);
+    }
+@Test
+    public void testForCropRow3(){
+        CropRow croprow3=new CropRow();
+        croprow3.add(cropThree);
+        String Expected="PotatoPlant";
+        String Actual =croprow3.get();
+        Assert.assertEquals(expected, actual);
+    }
+
+
+
+
 }
