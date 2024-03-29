@@ -123,7 +123,7 @@ public class FridayTest {
 
     @Test
     public void testSiloSize() {
-        int expected = silo.size() - 2;
+        int expected = silo.size() - 2; // change Asia
         boolean eat = froilanda.eat();
         int actual = silo.size();
         Assert.assertEquals(expected, actual);
