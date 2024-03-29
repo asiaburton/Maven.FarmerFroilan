@@ -8,12 +8,14 @@ public class MondayTest {
     Farmer froilan;
     Pilot froilanda;
     Farm farm;
+    Field field;
 
     @Before
     public void setUp(){
         froilan = new Farmer();
         froilanda = new Pilot();
         farm = new Farm();
+        field = farm.field();
     }
 
     @Test
@@ -137,5 +139,34 @@ public class MondayTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testFertilization(){
+        froilanda.mount(new Cropduster());
+        froilanda.cd.fertilze();
+
+        // Iterate through all the crops in the crop rows and make sure their fertilized
+        for(int i = 0; i < field.cropRows.size(); i++){
+            boolean actual = field.cropRows.get(i).hasBeenFertilized;
+            Assert.assertTrue(actual);
+        }
+    }
+
+    @Test
+    public void testFertilization(){
+
+        // Iterate through all the crops in the crop rows and make sure their fertilized
+        for(int i = 0; i < field.cropRows.size(); i++){
+            boolean actual = field.cropRows.get(i).hasBeenFertilized;
+            Assert.assertFalse(actual);
+        }
+    }
+
+    @Test
+    public void testPlaneNoise(){
+        CropDuster cropDuster = new CropDuster();
+        String expected = "BRRRRRRRR";
+        String actual = cropDuster.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
 
 }
