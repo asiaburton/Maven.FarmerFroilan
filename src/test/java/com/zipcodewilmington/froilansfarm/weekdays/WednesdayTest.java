@@ -123,7 +123,7 @@ public class WednesdayTest {
 
     @Test
     public void testSiloSize() {
-        int expected = silo.size() - 3;
+        int expected = silo.size() - 2;
         boolean eat = froilanda.eat();
         int actual = silo.size();
         Assert.assertEquals(expected, actual);
@@ -135,5 +135,25 @@ public class WednesdayTest {
         boolean actual = chicken.hasBeenFertilized;
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testBrush() {
+        String expected = "brushing";
+
+        String actual = froilan.brush();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testClean() {
+        String expected = "washing";
+
+        String actual = froilan.clean();
+
+        Assert.assertEquals(expected,actual);
+
+
     }
 }
