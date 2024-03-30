@@ -12,31 +12,17 @@ public class Farmer extends Botanist {
         tractor = new Tractor();
     }
 
-
-    @Override
-    public String ride() {
-        return "Riding";
-    }
-
-//    @Override
-//    public boolean mount(Ridable thingToRide) {
-//        if(getIsMounted()){
-//            // ASSERT: Rider is already mounted to something else. Can't mount another ridable
-//            return false;
-//        }
-//        // Else: mount the new ridable and set isMounted to be true
-//        setMounted(true);
-//        return getIsMounted();
-//    }
-
-
-
     @Override
     public boolean dismount(Ridable ridable) {
-//        isMounted = false;
-//        return isMounted;
         return false;
     }
 
 
+    public String brush() {
+        return "brushing";
+    }
+
+    public String clean() {
+        return "washing";
+    }
 }

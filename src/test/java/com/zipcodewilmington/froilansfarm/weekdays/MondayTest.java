@@ -29,6 +29,10 @@ public class MondayTest {
 
     @Test
     public void testStableHasHorses() {
+        // Removes initial horse added in the constructor
+        farm.stable.remove(0);
+
+        // Checks if the stable has a horse
         boolean actual = farm.stable.isEmpty();
         Assert.assertTrue(actual);
 
@@ -36,7 +40,10 @@ public class MondayTest {
 
     @Test
     public void testStableHasHorsesTrue() {
+        // Add a horse
         farm.stable.add(new Horse());
+
+        // Make sure the stable isn't empty
         boolean actual = farm.stable.isEmpty();
         Assert.assertFalse(actual);
     }
@@ -148,7 +155,8 @@ public class MondayTest {
     public void testFertilization(){
         froilanda.mount(froilanda.cd);
         for(int i = 0; i < farm.field.cropRows.size(); i++) {
-            froilanda.cd.fertilize(farm.field.cropRows.get(i));
+            boolean actual = froilanda.cd.fertilize(farm.field.cropRows.get(i));
+            Assert.assertTrue(actual);
         }
 
         // Iterate through all the crops in the crop rows and make sure their fertilized

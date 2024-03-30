@@ -29,6 +29,10 @@ public class ThursdayTest {
 
     @Test
     public void testStableHasHorses() {
+        // Removes initial horse added in the constructor
+        farm.stable.remove(0);
+
+        // Checks if the stable has a horse
         boolean actual = farm.stable.isEmpty();
         Assert.assertTrue(actual);
 
@@ -36,7 +40,10 @@ public class ThursdayTest {
 
     @Test
     public void testStableHasHorsesTrue() {
+        // Add a horse
         farm.stable.add(new Horse());
+
+        // Make sure the stable isn't empty
         boolean actual = farm.stable.isEmpty();
         Assert.assertFalse(actual);
     }
@@ -143,19 +150,48 @@ public class ThursdayTest {
 
         Assert.assertEquals(expected, actual);
     }
-//
-//    @Test
-//    public void testMilkCowsYield(){
-//        Cow cow = new Cow();
-//        Milk actual = cow.yield();
-//        Assert.assertTrue(actual instanceof Milk);
-//    }
-//
-//    @Test
-//    public void testChickenYield(){
-//        Chicken chick = new Chicken();
-//        Egg actual = chicken.yield();
-//        Assert.assertTrue(actual instanceof Egg);
-//    }
-//
+
+    @Test
+    public void testBrush() {
+        String expected = "brushing";
+
+        String actual = froilan.brush();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testClean() {
+        String expected = "washing";
+
+        String actual = froilan.clean();
+
+        Assert.assertEquals(expected,actual);
+
+
+    }
+    @Test
+    public void testChickenNoise(){
+        Chicken chicken = new Chicken();
+        String expected = "Cluck";
+        String actual = chicken.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testChickenYield(){
+        Chicken chick = new Chicken();
+        chick.setHasBeenFertilized(false);
+        Egg actual = chick.yield();
+        Assert.assertTrue(actual instanceof Egg);
+    }
+    @Test
+    public void testChickenYield2(){
+        Chicken chick = new Chicken();
+        chick.setHasBeenFertilized(true);
+        Egg actual = chick.yield();
+        Assert.assertNull(actual);
+    }
+
+
 }

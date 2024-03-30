@@ -23,4 +23,13 @@ public class Chicken implements Produce, Animal {
     public String makeNoise() {
         return "Cluck";
     }
+
+    public Egg yield() {
+        if(getHasBeenFertilized()){
+            return null;
+        }
+        else{
+            return new Egg();
+        }
+    }
 }

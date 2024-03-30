@@ -10,14 +10,12 @@ public class CropDuster extends Aircraft implements FarmVehicle, Ridable {
         super();
     }
 
-    public void fertilize(CropRow cr) {
+    public Boolean fertilize(CropRow cr) {
 
         for(int i = 0; i < cr.size(); i++){
             cr.get(i).hasBeenFertilized = true;
         }
+        return true;
     }
 
-    public String makeNoise() {
-        return "BRRRRRRRR";
-    }
 }

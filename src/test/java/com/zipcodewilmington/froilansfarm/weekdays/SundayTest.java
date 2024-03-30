@@ -29,6 +29,10 @@ public class SundayTest {
 
     @Test
     public void testStableHasHorses() {
+        // Removes initial horse added in the constructor
+        farm.stable.remove(0);
+
+        // Checks if the stable has a horse
         boolean actual = farm.stable.isEmpty();
         Assert.assertTrue(actual);
 
@@ -36,7 +40,10 @@ public class SundayTest {
 
     @Test
     public void testStableHasHorsesTrue() {
+        // Add a horse
         farm.stable.add(new Horse());
+
+        // Make sure the stable isn't empty
         boolean actual = farm.stable.isEmpty();
         Assert.assertFalse(actual);
     }
@@ -143,7 +150,22 @@ public class SundayTest {
 
         Assert.assertEquals(expected, actual);
     }
-//
+
+    @Test
+    public void testPotatoToString() {
+        String expected = "potato";
+        String actual = new Potato().toString();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCropRowConstructor(){
+        CropRow cr = new CropRow();
+        boolean actual = cr.get(0) instanceof CornStalk;
+        Assert.assertTrue(actual);
+    }
+
+    //
 //
 //
 //
