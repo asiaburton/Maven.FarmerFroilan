@@ -39,5 +39,9 @@ public abstract class Person implements NoiseMaker, Eater, Rider {
         isMounted = mounted;
     }
 
+    public String makeNoise(){
+        return "Howdy";
+    }
+
 
 }

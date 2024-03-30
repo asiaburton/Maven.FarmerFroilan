@@ -13,7 +13,7 @@ public class TuesdayTest {
 
     @Before
     public void setUp(){
-        froilan = new Farmer();
+        froilan = new Froilan();
         froilanda = new Pilot();
         farm = new Farm();
         horse = new Horse();
@@ -143,43 +143,45 @@ public class TuesdayTest {
 
         Assert.assertEquals(expected, actual);
     }
-//
-//    @Test
-//    public void testHarvest(){
-//        froilan.mount(new Tractor());
-//        froilan.tractor.harvest();
-//        // Iterate through all the crops in the crop rows and make sure their fertilized
-//        for(int i = 0; i < field.cropRows.size(); i++){
-//            boolean actual = field.cropRows.get(i).hasBeenHarvested;
-//            Assert.assertTrue(actual);
-//        }
-//    }
-//    @Test
-//    public void testHarvestFalse(){
-//        // Iterate through all the crops in the crop rows and make sure their fertilized
-//        for(int i = 0; i < field.cropRows.size(); i++){
-//            boolean actual = field.cropRows.get(i).hasBeenHarvested;
-//            Assert.assertFalse(actual);
-//        }
-//    }
-//
-//    @Test
-//    public void testTractorNoise(){
-//        String expected = "Vroom";
-//        String actual = froilan.tractor.makeNoise();
-//        Assert.assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    public void testFarmerNoise() {
-//        String expected = "Howdy";
-//        String actual = froilan.makeNoise();
-//        Assert.assertEquals(expected, actual);
-//    }
-//    @Test
-//    public void testPilotNoise() {
-//        String expected = "Howdy";
-//        String actual = froilanda.makeNoise();
-//        Assert.assertEquals(expected, actual);
-//    }
+
+    @Test
+    public void testHarvest(){
+        froilan.mount(new Tractor());
+        for(int i = 0; i < farm.field.cropRows.size(); i++) {
+            froilan.tractor.harvest(farm.field.cropRows.get(i));
+        }
+        // Iterate through all the crops in the crop rows and make sure their fertilized
+        for(int i = 0; i < farm.field.cropRows.size(); i++){
+            boolean actual = farm.field.cropRows.get(i).get(i).hasBeenHarvested;
+            Assert.assertTrue(actual);
+        }
+    }
+    @Test
+    public void testHarvestFalse(){
+        // Iterate through all the crops in the crop rows and make sure their fertilized
+        for(int i = 0; i < farm.field.cropRows.size(); i++){
+            boolean actual = farm.field.cropRows.get(i).get(i).hasBeenHarvested;
+            Assert.assertFalse(actual);
+        }
+    }
+
+    @Test
+    public void testTractorNoise(){
+        String expected = "Chug Chug Chug";
+        String actual = froilan.tractor.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFarmerNoise() {
+        String expected = "Howdy";
+        String actual = froilan.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testPilotNoise() {
+        String expected = "Howdy";
+        String actual = froilanda.makeNoise();
+        Assert.assertEquals(expected, actual);
+    }
 }

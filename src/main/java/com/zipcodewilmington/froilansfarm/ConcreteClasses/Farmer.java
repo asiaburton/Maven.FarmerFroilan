@@ -6,8 +6,10 @@ import com.zipcodewilmington.froilansfarm.AbstractClasses.Ridable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 public class Farmer extends Botanist {
+    public Tractor tractor;
     public Farmer(){
         super();
+        tractor = new Tractor();
     }
 
 
@@ -26,6 +28,8 @@ public class Farmer extends Botanist {
 //        setMounted(true);
 //        return getIsMounted();
 //    }
+
+
 
     @Override
     public boolean dismount(Ridable ridable) {
