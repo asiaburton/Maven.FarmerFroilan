@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.ConcreteClasses;
 
-public class Stable {
+import java.util.ArrayList;
+
+public class Stable extends ArrayList<Horse> {
 
 }

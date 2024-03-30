@@ -41,7 +41,7 @@ public class InheritanceTest {
 
     @Test
     public void testRidableInheritance1(){
-        Ridable ride = new Tractor();
+        Ridable ride = new Horse();
         Assert.assertTrue(ride instanceof Ridable);
     }
 
@@ -191,7 +191,7 @@ public class InheritanceTest {
 
     @Test
     public void testRiderInheritance2(){
-        Rider rider = (Rider) new Tractor();
-        Assert.assertTrue(rider instanceof Rider);
+        Ridable rider = (Ridable) new Horse();
+        Assert.assertTrue(rider instanceof Ridable);
     }
 }
