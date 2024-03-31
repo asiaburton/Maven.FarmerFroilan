@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
-public interface Ridable extends Rider {
+import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
+
+public interface Ridable {
 }

@@ -1,8 +1,35 @@
 package com.zipcodewilmington.froilansfarm.ConcreteClasses;
 
-import com.zipcodewilmington.froilansfarm.AbstractClasses.Animal;
+import com.zipcodewilmington.froilansfarm.Interfaces.Animal;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 
-public class Chicken extends Animal implements Produce {
+public class Chicken implements Produce, Animal {
+    boolean hasBeenFertilized;
+
+    public Chicken(){
+        hasBeenFertilized = false;
+    }
+
+    public boolean getHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    @Override
+    public String makeNoise() {
+        return "Cluck";
+    }
+
+    public Egg yield() {
+        if(getHasBeenFertilized()){
+            return null;
+        }
+        else{
+            return new Egg();
+        }
+    }
 }

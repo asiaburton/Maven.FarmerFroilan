@@ -1,4 +1,4 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
-public interface Vehicle extends NoiseMaker, Ridable {
+public interface Vehicle extends Ridable{
 }
