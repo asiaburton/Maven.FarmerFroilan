@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm.AbstractClasses;
+package com.zipcodewilmington.froilansfarm.Interfaces;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 

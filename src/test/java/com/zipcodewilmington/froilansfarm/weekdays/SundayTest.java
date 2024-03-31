@@ -160,47 +160,40 @@ public class SundayTest {
 
     @Test
     public void testCropRowConstructor(){
-        CropRow cr = new CropRow();
+        CropRow cr = new CropRow(new CornStalk());
         boolean actual = cr.get(0) instanceof CornStalk;
         Assert.assertTrue(actual);
     }
 
-    //
-//
-//
-//
-//
-//
-//
-//
-//
-//@Test
-//    public void testForCropRow1(){
-//        CropRow croprow1=new CropRow();
-//        croprow1.add(cropOne);
-//        String Expected="CornStalk";
-//        String Actual =croprow1.get();
-//        Assert.assertEquals(expected, actual);
-//}
-//
-//@Test
-//    public void testForCropRow2(){
-//        CropRow croprow2=new CropRow();
-//        croprow2.add(cropTwo);
-//        String Expected="TomatoPlant";
-//        String Actual =croprow2.get();
-//        Assert.assertEquals(expected, actual);
-//    }
-//@Test
-//    public void testForCropRow3(){
-//        CropRow croprow3=new CropRow();
-//        croprow3.add(cropThree);
-//        String Expected="PotatoPlant";
-//        String Actual =croprow3.get();
-//        Assert.assertEquals(expected, actual);
-//    }
-//
-//
-//
-//
+    @Test
+    public void testForCropRow1(){
+        CropRow croprow1=new CropRow(new CornStalk());
+        froilan.plant(new CornStalk(), croprow1);
+        String Expected="CornStalk";
+        String Actual = croprow1.get(1).toString();
+        Assert.assertEquals(Expected, Actual);
+    }
+
+    @Test
+    public void testForCropRow2(){
+        CropRow croprow2=new CropRow(new TomatoPlant());
+        froilan.plant(new TomatoPlant(), croprow2);
+        String Expected="TomatoPlant";
+        String Actual =croprow2.get(1).toString();
+        Assert.assertEquals(Expected, Actual);
+    }
+    @Test
+    public void testForCropRow3(){
+        // Create a new CropRow which will plant a new Crop
+        CropRow croprow3=new CropRow(new PotatoPlant());
+
+        // Plant another crop
+        froilan.plant(new PotatoPlant(), croprow3);
+        String Expected="PotatoPlant";
+
+        // Get newly planted Crop
+        String Actual =croprow3.get(1).toString();
+
+        Assert.assertEquals(Expected, Actual);
+    }
 }

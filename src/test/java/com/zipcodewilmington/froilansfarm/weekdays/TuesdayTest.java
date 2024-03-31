@@ -159,7 +159,7 @@ public class TuesdayTest {
         }
         // Iterate through all the crops in the crop rows and make sure their fertilized
         for(int i = 0; i < farm.field.cropRows.size(); i++){
-            boolean actual = farm.field.cropRows.get(i).get(i).hasBeenHarvested;
+            boolean actual = ((Crop) farm.field.cropRows.get(i).get(i)).hasBeenHarvested;
             Assert.assertTrue(actual);
         }
     }
@@ -167,7 +167,7 @@ public class TuesdayTest {
     public void testHarvestFalse(){
         // Iterate through all the crops in the crop rows and make sure their fertilized
         for(int i = 0; i < farm.field.cropRows.size(); i++){
-            boolean actual = farm.field.cropRows.get(i).get(i).hasBeenHarvested;
+            boolean actual = ((Crop) farm.field.cropRows.get(i).get(i)).hasBeenHarvested;
             Assert.assertFalse(actual);
         }
     }

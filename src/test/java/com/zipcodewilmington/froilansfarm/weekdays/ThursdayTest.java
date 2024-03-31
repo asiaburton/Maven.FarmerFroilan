@@ -167,8 +167,6 @@ public class ThursdayTest {
         String actual = froilan.clean();
 
         Assert.assertEquals(expected,actual);
-
-
     }
     @Test
     public void testChickenNoise(){

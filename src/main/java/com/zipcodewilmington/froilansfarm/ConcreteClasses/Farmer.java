@@ -1,9 +1,7 @@
 package com.zipcodewilmington.froilansfarm.ConcreteClasses;
 
 import com.zipcodewilmington.froilansfarm.AbstractClasses.Botanist;
-import com.zipcodewilmington.froilansfarm.AbstractClasses.Person;
-import com.zipcodewilmington.froilansfarm.AbstractClasses.Ridable;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.Interfaces.Ridable;
 
 public class Farmer extends Botanist {
     public Tractor tractor;

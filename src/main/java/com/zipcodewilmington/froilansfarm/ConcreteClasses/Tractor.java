@@ -10,8 +10,8 @@ public class Tractor implements FarmVehicle, NoiseMaker {
     }
 
     public void harvest(CropRow cr) {
-        for(Crop harvestedCrop: cr){
-            harvestedCrop.hasBeenHarvested = true;
+        for(Object harvestedCrop: cr){
+            ((Crop) harvestedCrop).hasBeenHarvested = true;;
         }
     }
 }
