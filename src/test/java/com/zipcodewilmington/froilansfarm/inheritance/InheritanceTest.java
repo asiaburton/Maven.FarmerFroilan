@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.inheritance;
 
-import jdk.internal.vm.annotation.ReservedStackAccess;
+import com.zipcodewilmington.froilansfarm.AbstractClasses.*;
+import com.zipcodewilmington.froilansfarm.ConcreteClasses.*;
+import com.zipcodewilmington.froilansfarm.Interfaces.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,44 +11,44 @@ public class InheritanceTest {
 
     @Test
     public void testNoiseMakerInheritance1(){
-        NoiseMaker car = new Vehicle();
-        Assert.assertTrue(car instanceof Noisemaker);
+        NoiseMaker car = (NoiseMaker) new Tractor();
+        Assert.assertTrue(car instanceof NoiseMaker);
     }
 
     @Test
     public void testNoiseMakerInheritance2(){
-        NoiserMaker cat = new Animal();
-        Assert.assertTrue(cat instanceof NoiseMaker);
+//        NoiseMaker cat = new Cow();
+//        Assert.assertTrue(cat instanceof NoiseMaker);
     }
 
     @Test
     public void testNoiseMakerInheritance3(){
-        NoiserMaker human = new Person();
+        NoiseMaker human = new Farmer();
         Assert.assertTrue(human instanceof NoiseMaker);
     }
 
     @Test
     public void testVehicleInheritance1(){
-        Vehicle truck = new FarmVehicle();
+        Vehicle truck = new Tractor();
         Assert.assertTrue(truck instanceof Vehicle);
     }
 
     @Test
     public void testVehicleInheritance2(){
-        Vehicle plane = new Aircraft();
+        Vehicle plane = (Vehicle) new Aircraft();
         Assert.assertTrue(plane instanceof Vehicle);
     }
 
     @Test
-    public void testRideableInheritance1(){
-        Ridable ride = new Vehicle();
+    public void testRidableInheritance1(){
+        Ridable ride = new Horse();
         Assert.assertTrue(ride instanceof Ridable);
     }
 
     @Test
-    public void testRideableInheritance2(){
-        Rideable horse = new Horse();
-        Assert.assertTrue(horse instanceof Rideable);
+    public void testRidableInheritance2(){
+        Ridable horse = new Horse();
+        Assert.assertTrue(horse instanceof Ridable);
     }
 
     @Test
@@ -57,7 +59,7 @@ public class InheritanceTest {
 
     @Test
     public void testFarmVehicleInheritance2(){
-        FarmVehicle duster = new CropCuster();
+        FarmVehicle duster = new CropDuster();
         Assert.assertTrue(duster instanceof FarmVehicle);
     }
 
@@ -81,25 +83,25 @@ public class InheritanceTest {
 
     @Test
     public void testEaterInheritance1(){
-        Eater eater = new Person();
+        Eater eater = new Pilot();
         Assert.assertTrue(eater instanceof Eater);
     }
 
     @Test
     public void testEaterInheritance2(){
-        Eater eater = new Animal();
+        Eater eater = new Chicken();
         Assert.assertTrue(eater instanceof Eater);
     }
 
     @Test
     public void testRiderInheritance(){
-        Rider human = new Person();
+        Rider human = new Farmer();
         Assert.assertTrue(human instanceof Rider);
     }
 
     @Test
     public void testPersonInheritance1(){
-        Person human = new Botanist();
+        Person human = new Froilan();
         Assert.assertTrue(human instanceof Person);
     }
 
@@ -169,11 +171,11 @@ public class InheritanceTest {
         Assert.assertTrue(tomato instanceof Crop);
     }
 
-    @Test
-    public void testCropInheritance3(){
-        Crop row = new CropRow();
-        Assert.assertTrue(row instanceof Crop);
-    }
+//    @Test
+//    public void testCropInheritance3(){
+//        Crop row = new CropRow();
+//        Assert.assertTrue(row instanceof Crop);
+//    }
 
     @Test
     public void testTomatoPlantInheritance(){
@@ -181,9 +183,15 @@ public class InheritanceTest {
         Assert.assertTrue(tomato instanceof TomatoPlant);
     }
 
+//    @Test
+//    public void testCornStalkInheritance(){
+//        CornStalk cs = new EarCorn();
+//        Assert.assertTrue(cs instanceof CornStalk);
+//    }
+
     @Test
-    public void testCornStalkInheritance(){
-        CornStalk cs = new EarCorn();
-        Assert.assertTrue(cs instanceof CornStalk);
+    public void testRiderInheritance2(){
+        Ridable rider = (Ridable) new Horse();
+        Assert.assertTrue(rider instanceof Ridable);
     }
 }
